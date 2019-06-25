@@ -18,7 +18,7 @@ The `tpqps` package is intended as a technological illustration only. It comes w
 Installing from source via `Git` and `Github`:
 
     git clone https://github.com/yhilpisch/tpqps
-    cd tps
+    cd tpqps
     python setup.py install
     
 Using `pip` in combination with `Github`:
