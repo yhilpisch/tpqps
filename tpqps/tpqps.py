@@ -29,8 +29,8 @@ class tpqps(object):
     ''' A class for the easy implementation of streaming plots with Plotly.
     '''
 
-    def __init__(self, config_file, title, subplot_rows=1, subplot_columns=1,
-                 maxpoints=50, token_number=0):
+    def __init__(self, config_file, title, filename='', subplot_rows=1,
+                 subplot_columns=1, maxpoints=50, token_number=0):
         ''' Returns a ploty_stream instance.
 
         Parameters
@@ -61,6 +61,7 @@ class tpqps(object):
             if len(self.api_tokens) == 0:
                 raise IOError(NO_TOKENS_ERROR)
 
+        self.filename= filename
         self.sources = dict()
         self.source_id = 0
         self.traces = list()
@@ -113,8 +114,7 @@ class tpqps(object):
             else:
                 self.fig['layout'][target].update(**self.layout[target])
 
-        self.plot_url = ply.plot(
-            self.fig, 'plotly_stream')
+    self.plot_url = ply.plot(self.fig, filename=self.filename)
 
     def add_layout(self, target="", layout={}):
         ''' Adds layout information of the plot.
