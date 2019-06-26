@@ -114,7 +114,7 @@ class tpqps(object):
             else:
                 self.fig['layout'][target].update(**self.layout[target])
 
-    self.plot_url = ply.plot(self.fig, filename=self.filename)
+        self.plot_url = ply.plot(self.fig, filename=self.filename)
 
     def add_layout(self, target="", layout={}):
         ''' Adds layout information of the plot.
